@@ -196,3 +196,104 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Mobile Responsive Styles */
+html, body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Mobile viewport fixes */
+@media screen and (max-width: 768px) {
+  .max-w-7xl {
+    max-width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  header .flex {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  nav .flex {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 2px;
+  }
+  
+  nav .flex::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .p-6 {
+    padding: 1rem;
+  }
+  
+  .p-4 {
+    padding: 0.75rem;
+  }
+  
+  .recharts-responsive-container {
+    min-height: 200px !important;
+  }
+}
+
+/* Landscape mobile orientation */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  header {
+    padding: 0.5rem 0;
+  }
+  
+  header h1 {
+    font-size: 1rem;
+  }
+  
+  header p {
+    font-size: 0.75rem;
+  }
+  
+  nav .flex {
+    padding: 0.5rem 0;
+  }
+  
+  nav a {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  main {
+    padding: 0.75rem;
+  }
+  
+  .recharts-responsive-container {
+    min-height: 150px !important;
+  }
+  
+  .animate-bounce {
+    display: none;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  .w-10.h-10 {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Touch-friendly tap targets */
+@media (hover: none) and (pointer: coarse) {
+  button, a, .cursor-pointer {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  nav a {
+    min-height: 48px;
+    padding: 0.75rem 1rem;
+  }
+}

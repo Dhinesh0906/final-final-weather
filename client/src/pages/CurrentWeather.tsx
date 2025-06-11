@@ -125,21 +125,21 @@ const CurrentWeatherPage = () => {
             onLocationClick={handleLocationClick}
           />
           <Navigation />
-          <main className="max-w-7xl mx-auto p-4">
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-6 animate-fade-in">
+          <main className="max-w-7xl mx-auto p-2 sm:p-4">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-3 sm:p-6 animate-fade-in">
               <CurrentWeather weather={currentWeather} location={currentLocation} />
               
               {/* Add some visual elements */}
-              <div className="mt-8 space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 animate-scale-in">
-                    <h3 className="text-lg font-semibold mb-4 text-gray-800">Weather Trends</h3>
+              <div className="mt-4 sm:mt-8 space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
+                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-3 sm:p-6 animate-scale-in">
+                    <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-800">Weather Trends</h3>
                     {currentLocation.lat !== 0 && <WeatherChart location={currentLocation} />}
                   </div>
                   
-                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 animate-scale-in">
-                    <h3 className="text-lg font-semibold mb-4 text-gray-800">Weather Tips</h3>
-                    <div className="space-y-3 text-sm text-gray-600">
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-3 sm:p-6 animate-scale-in">
+                    <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-800">Weather Tips</h3>
+                    <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-600">
                       {currentWeather && (
                         <>
                           {currentWeather.temperature > 30 && (

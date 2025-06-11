@@ -33,16 +33,16 @@ const Header: React.FC<HeaderProps> = ({ currentCity, onSearch, onLocationClick 
           </div>
 
           {/* Search Bar and Location Button */}
-          <div className="flex items-center space-x-4 flex-1 max-w-md ml-8">
+          <div className="flex items-center space-x-4 flex-1 max-w-md ml-4 md:ml-8">
             <GlobalSearch 
               onSearch={onSearch}
               placeholder="Search for any city..."
-              className="flex-1"
+              className="flex-1 min-w-0"
             />
             
             <button
               onClick={onLocationClick}
-              className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-200 hover:scale-105 active:scale-95"
+              className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg transition-all duration-200 hover:scale-105 active:scale-95 shrink-0"
               title="Use current location"
             >
               <RefreshCw className="w-4 h-4" />
