@@ -54,23 +54,23 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({ weather, location }) =>
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Main Weather Card */}
-      <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-6 animate-fade-in">
+      <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-4 sm:p-6 animate-fade-in">
         <div className="flex items-center justify-between mb-4">
-          <div>
-            <h2 className="text-4xl font-bold text-gray-900">{Math.round(weather.temperature)}°C</h2>
-            <p className="text-gray-600 capitalize text-lg">{weather.description}</p>
+          <div className="flex-1 min-w-0">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">{Math.round(weather.temperature)}°C</h2>
+            <p className="text-gray-600 capitalize text-base sm:text-lg">{weather.description}</p>
             <p className="text-sm text-gray-500">Feels like {Math.round(weather.feelsLike)}°C</p>
-            <p className="text-sm text-gray-500">{weather.city}, {weather.region}, {weather.country}</p>
+            <p className="text-xs sm:text-sm text-gray-500 truncate">{weather.city}, {weather.region}, {weather.country}</p>
           </div>
-          <div className="text-right">
+          <div className="text-right shrink-0">
             <img
               src={`https:${weather.icon}`}
               alt={weather.description}
-              className="w-20 h-20 animate-bounce-in"
+              className="w-16 h-16 sm:w-20 sm:h-20 animate-bounce-in"
             />
-            <p className="text-xs text-gray-500 mt-1">{new Date(weather.localtime).toLocaleString()}</p>
+            <p className="text-xs text-gray-500 mt-1 hidden sm:block">{new Date(weather.localtime).toLocaleString()}</p>
           </div>
         </div>
 
@@ -91,57 +91,57 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({ weather, location }) =>
       </div>
 
       {/* Weather Details Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-4 text-center hover-lift animate-scale-in">
-          <Wind className="w-6 h-6 text-blue-500 mx-auto mb-2" />
-          <p className="text-sm text-gray-600">Wind</p>
-          <p className="font-semibold">{Math.round(weather.windSpeed)} km/h</p>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-3 sm:p-4 text-center hover-lift animate-scale-in min-h-20 sm:min-h-24">
+          <Wind className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mx-auto mb-1 sm:mb-2" />
+          <p className="text-xs sm:text-sm text-gray-600">Wind</p>
+          <p className="font-semibold text-sm sm:text-base">{Math.round(weather.windSpeed)} km/h</p>
           <p className="text-xs text-gray-500">{weather.windDir}</p>
         </div>
 
-        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-4 text-center hover-lift animate-scale-in animation-delay-150">
-          <Droplets className="w-6 h-6 text-blue-500 mx-auto mb-2" />
-          <p className="text-sm text-gray-600">Humidity</p>
-          <p className="font-semibold">{weather.humidity}%</p>
+        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-3 sm:p-4 text-center hover-lift animate-scale-in animation-delay-150 min-h-20 sm:min-h-24">
+          <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mx-auto mb-1 sm:mb-2" />
+          <p className="text-xs sm:text-sm text-gray-600">Humidity</p>
+          <p className="font-semibold text-sm sm:text-base">{weather.humidity}%</p>
         </div>
 
-        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-4 text-center hover-lift animate-scale-in animation-delay-200">
-          <Eye className="w-6 h-6 text-blue-500 mx-auto mb-2" />
-          <p className="text-sm text-gray-600">Visibility</p>
-          <p className="font-semibold">{weather.visibility} km</p>
+        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-3 sm:p-4 text-center hover-lift animate-scale-in animation-delay-200 min-h-20 sm:min-h-24">
+          <Eye className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mx-auto mb-1 sm:mb-2" />
+          <p className="text-xs sm:text-sm text-gray-600">Visibility</p>
+          <p className="font-semibold text-sm sm:text-base">{weather.visibility} km</p>
         </div>
 
-        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-4 text-center hover-lift animate-scale-in animation-delay-300">
-          <Gauge className="w-6 h-6 text-blue-500 mx-auto mb-2" />
-          <p className="text-sm text-gray-600">Pressure</p>
-          <p className="font-semibold">{weather.pressure} mb</p>
+        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-3 sm:p-4 text-center hover-lift animate-scale-in animation-delay-300 min-h-20 sm:min-h-24">
+          <Gauge className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mx-auto mb-1 sm:mb-2" />
+          <p className="text-xs sm:text-sm text-gray-600">Pressure</p>
+          <p className="font-semibold text-sm sm:text-base">{weather.pressure} mb</p>
         </div>
 
-        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-4 text-center hover-lift animate-scale-in animation-delay-450">
-          <Sun className="w-6 h-6 text-yellow-500 mx-auto mb-2" />
-          <p className="text-sm text-gray-600">UV Index</p>
-          <p className="font-semibold">{weather.uvIndex}</p>
+        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-3 sm:p-4 text-center hover-lift animate-scale-in animation-delay-450 min-h-20 sm:min-h-24">
+          <Sun className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500 mx-auto mb-1 sm:mb-2" />
+          <p className="text-xs sm:text-sm text-gray-600">UV Index</p>
+          <p className="font-semibold text-sm sm:text-base">{weather.uvIndex}</p>
         </div>
 
-        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-4 text-center hover-lift animate-scale-in animation-delay-600">
-          <Thermometer className="w-6 h-6 text-blue-500 mx-auto mb-2" />
-          <p className="text-sm text-gray-600">Dew Point</p>
-          <p className="font-semibold">{Math.round(weather.dewPoint)}°C</p>
+        <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-3 sm:p-4 text-center hover-lift animate-scale-in animation-delay-600 min-h-20 sm:min-h-24">
+          <Thermometer className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mx-auto mb-1 sm:mb-2" />
+          <p className="text-xs sm:text-sm text-gray-600">Dew Point</p>
+          <p className="font-semibold text-sm sm:text-base">{Math.round(weather.dewPoint)}°C</p>
         </div>
 
         {/* Astronomy Data */}
         {astronomy && (
           <>
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-4 text-center hover-lift animate-scale-in animation-delay-750">
-              <Sunrise className="w-6 h-6 text-orange-500 mx-auto mb-2" />
-              <p className="text-sm text-gray-600">Sunrise</p>
-              <p className="font-semibold">{astronomy.sunrise}</p>
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-3 sm:p-4 text-center hover-lift animate-scale-in animation-delay-750 min-h-20 sm:min-h-24">
+              <Sunrise className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500 mx-auto mb-1 sm:mb-2" />
+              <p className="text-xs sm:text-sm text-gray-600">Sunrise</p>
+              <p className="font-semibold text-sm sm:text-base">{astronomy.sunrise}</p>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-4 text-center hover-lift animate-scale-in animation-delay-900">
-              <Sunset className="w-6 h-6 text-red-500 mx-auto mb-2" />
-              <p className="text-sm text-gray-600">Sunset</p>
-              <p className="font-semibold">{astronomy.sunset}</p>
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow p-3 sm:p-4 text-center hover-lift animate-scale-in animation-delay-900 min-h-20 sm:min-h-24">
+              <Sunset className="w-5 h-5 sm:w-6 sm:h-6 text-red-500 mx-auto mb-1 sm:mb-2" />
+              <p className="text-xs sm:text-sm text-gray-600">Sunset</p>
+              <p className="font-semibold text-sm sm:text-base">{astronomy.sunset}</p>
             </div>
           </>
         )}
