@@ -38,6 +38,7 @@ A comprehensive weather application providing real-time weather data, forecasts,
 - **Vite** for build tooling
 - **ESBuild** for fast compilation
 - **Hot Module Replacement** for development
+- *AI and api* used in the project building
 
 ## API Endpoints
 
