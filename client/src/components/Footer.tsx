@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Developer</h3>
             <div className="space-y-2">
               <p className="text-gray-300">
-                <strong>Dhinesh Kumar B</strong>
+                <strong></strong>
               </p>
               <div className="flex items-center text-gray-400 text-sm">
                 <Mail className="w-4 h-4 mr-2" />
@@ -32,7 +32,6 @@ const Footer: React.FC = () => {
                   href="mailto:dhineshkumar0906@gmail.com" 
                   className="hover:text-white transition-colors"
                 >
-                  dhineshkumar0906@gmail.com
                 </a>
               </div>
             </div>
